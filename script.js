@@ -1,3 +1,13 @@
+const resultContainer = document.getElementById("result");
+const resultText = document.getElementById("text-result");
+
+const operatorsContainer = document.getElementById("operators");
+const operators = operatorsContainer.childNodes;
+
+const digitsContainer = document.querySelector("#digits");
+const digits = digitsContainer.childNodes;
+
+
 let numOne = 0;
 let numTwo = 0;
 let operator = '';
