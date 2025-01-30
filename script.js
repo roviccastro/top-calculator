@@ -11,5 +11,8 @@ function multiply(a, b){
 }
 
 function divide(a, b){
+  if(!a | !b){
+    return `Can't divide by 0`
+  }
   return +a / +b;
 }
