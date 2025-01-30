@@ -7,11 +7,6 @@ const operators = operatorsContainer.childNodes;
 const digitsContainer = document.querySelector("#digits");
 const digits = digitsContainer.childNodes;
 
-
-let numOne = 0;
-let numTwo = 0;
-let operator = '';
-
 function operate(){
   numOne = window.prompt('Enter Number:', '0');
   operator = window.prompt('Enter Operator:', '+');
@@ -66,5 +61,3 @@ function divide(a, b){
   console.log(+a / +b)
   return +a / +b;
 }
-
-// operate()
