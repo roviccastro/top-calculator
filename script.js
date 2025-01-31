@@ -54,6 +54,27 @@ function operate(firstDigit, operatorDigit, secondDigit){
 
 }
 
+function evaluateValue(e){
+  if (e.target.id === 'equals'){
+    
+    if (!numTwo){
+      displayResult(`${numOne}`)
+    } else {
+      operate(numOne, numOperator, numTwo);
+    }
+
+  } else if (e.target.id === 'clear'){
+
+    numTwo = '';
+    numOne = '';
+    numOperator = '';
+    numResult = '';
+
+    displayResult('');
+
+  }
+}
+
 function storeValue(e){
 
   if (numResult){
@@ -87,16 +108,6 @@ function storeValue(e){
       numOperator = e.target.textContent;
       displayEquation(numOne, numOperator, numTwo);
     };
-
-  }
-
-  if (e.target.id === 'equals'){
-    
-    if (!numTwo){
-      displayResult(`${numOne}`)
-    } else {
-      operate(numOne, numOperator, numTwo);
-    }
 
   }
 
@@ -147,5 +158,5 @@ for (x of digits){
 };
 
 for (x of evaluators){
-  x.addEventListener('click', storeValue);
+  x.addEventListener('click', evaluateValue);
 };
