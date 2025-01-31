@@ -113,25 +113,25 @@ function displayResult(e){
 // Operator Functions
 
 function add(a, b){
-  numResult = parseInt(a) + parseInt(b);
-  numOne = numResult;
+  numResult = (parseInt(a) + parseInt(b)).toPrecision(3);
+  numOne = numResult.toPrecision(3);
   return numResult;
 }
 
 function subtract(a, b){
-  numResult = parseInt(a) - parseInt(b);
+  numResult = (parseInt(a) - parseInt(b)).toPrecision(3);
   numOne = numResult;
   return numResult;
 }
 
 function multiply(a, b){
-  numResult = parseInt(a) * parseInt(b);
+  numResult = (parseInt(a) * parseInt(b)).toPrecision(3);
   numOne = numResult;
   return numResult;
 }
 
 function divide(a, b){
-  numResult = parseInt(a) / parseInt(b);
+  numResult = (parseInt(a) / parseInt(b)).toPrecision(3);
   numOne = numResult;
   return numResult;
 }
