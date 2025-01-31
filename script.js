@@ -120,19 +120,19 @@ function add(a, b){
 
 function subtract(a, b){
   numResult = parseInt(a) - parseInt(b);
-  NumOne = numResult;
+  numOne = numResult;
   return numResult;
 }
 
 function multiply(a, b){
   numResult = parseInt(a) * parseInt(b);
-  NumOne = numResult;
+  numOne = numResult;
   return numResult;
 }
 
 function divide(a, b){
   numResult = parseInt(a) / parseInt(b);
-  NumOne = numResult;
+  numOne = numResult;
   return numResult;
 }
 
