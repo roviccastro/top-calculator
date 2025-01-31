@@ -6,6 +6,9 @@ let numOperator = '';
 
 // DOM Elements
 
+const resultContainer = document.querySelector("#main");
+const resultText = document.querySelector("#text-result");
+
 const operatorsContainer = document.querySelector("#operators");
 const operators = operatorsContainer.childNodes;
 
@@ -27,22 +30,22 @@ function operate(firstDigit, operatorDigit, secondDigit){
    
     default:
     case '+':{
-      add(firstDigit, secondDigit);
+      displayResult(add(firstDigit, secondDigit));
       break;
     }
 
     case '-':{
-      subtract(firstDigit, secondDigit);
+      displayResult(subtract(firstDigit, secondDigit));
       break;
     }
 
     case '*':{
-      multiply(firstDigit, secondDigit);
+      displayResult(multiply(firstDigit, secondDigit));
       break;
     }
 
     case '/':{
-      divide(firstDigit, secondDigit);
+      displayResult(divide(firstDigit, secondDigit));
       break;
     }
 
@@ -67,6 +70,10 @@ function storeValue(e){
   }
   console.log(`${numOne}, ${numOperator}, ${numTwo}`);
 
+}
+
+function displayResult(a){
+  resultText.textContent = `${a}`
 }
 
 // Operator Functions
