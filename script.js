@@ -58,15 +58,20 @@ function storeValue(e){
 
   if (numResult){
 
-    numOne = numResult;
+    if (e.target.parentElement.id === 'digits'){
+      
+      if (!numOperator){
+        numOne += e.target.textContent;
+        displayEquation(numOne, numOperator, numTwo);
+      } else {
+        numTwo += e.target.textContent;
+        displayEquation(numOne, numOperator, numTwo);
+      }
 
-    if (e.target.parentElement.id === 'operators' && numOne){
+    } else if (e.target.parentElement.id === 'operators' && numOne){
       numOperator = e.target.textContent;
       displayEquation(numOne, numOperator, numTwo);
-    } else {
-      numTwo += e.target.textContent;
-      displayEquation(numOne, numOperator, numTwo);
-    }
+    };
 
   } else {
 
@@ -103,21 +108,25 @@ function displayResult(e){
 
 function add(a, b){
   numResult = parseInt(a) + parseInt(b);
+  numOne = numResult;
   return numResult;
 }
 
 function subtract(a, b){
   numResult = parseInt(a) - parseInt(b);
+  NumOne = numResult;
   return numResult;
 }
 
 function multiply(a, b){
   numResult = parseInt(a) * parseInt(b);
+  NumOne = numResult;
   return numResult;
 }
 
 function divide(a, b){
   numResult = parseInt(a) / parseInt(b);
+  NumOne = numResult;
   return numResult;
 }
 
