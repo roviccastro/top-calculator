@@ -94,13 +94,13 @@ function divide(a, b){
 // Event Listeners
 
 for (x of operators){
-  x.addEventListener('click', storeValue)
-}
+  x.addEventListener('click', storeValue);
+};
 
 for (x of digits){
-  x.addEventListener('click', storeValue)
-}
+  x.addEventListener('click', storeValue);
+};
 
 for (x of evaluators){
-  x.addEventListener('click', storeValue)
-}
+  x.addEventListener('click', storeValue);
+};
