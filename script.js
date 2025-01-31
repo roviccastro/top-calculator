@@ -76,8 +76,8 @@ function displayEquation(eq){
 
 }
 
-function displayResult(a){
-  resultText.textContent = `${a}`
+function displayResult(res){
+  resultText.textContent = `${res}`
 }
 
 // Operator Functions
