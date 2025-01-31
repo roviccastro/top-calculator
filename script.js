@@ -2,6 +2,9 @@ let numOne = '';
 let numTwo = '';
 let numOperator = '';
 
+const operatorsContainer = document.querySelector("#operators");
+const operators = document.querySelectorAll(".operator");
+
 function operate(firstDigit, operatorDigit, secondDigit){
   
   switch(operatorDigit){
@@ -31,6 +34,10 @@ function operate(firstDigit, operatorDigit, secondDigit){
 
 }
 
+function storeValue(e){
+  
+}
+
 function add(a, b){
   console.log(+a + +b)
   return +a + +b;
@@ -52,4 +59,8 @@ function divide(a, b){
   }
   console.log(+a / +b)
   return +a / +b;
+}
+
+for (x of operators){
+  x.addEventListener('click', storeValue)
 }
