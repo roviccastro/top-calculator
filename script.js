@@ -91,7 +91,13 @@ function storeValue(e){
   }
 
   if (e.target.id === 'equals'){
-    operate(numOne, numOperator, numTwo);
+    
+    if (!numTwo){
+      displayResult(`${numOne}`)
+    } else {
+      operate(numOne, numOperator, numTwo);
+    }
+
   }
 
 }
