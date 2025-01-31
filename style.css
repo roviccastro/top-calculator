@@ -43,7 +43,7 @@ button{
 
   border: solid 2px antiquewhite;
   border-radius: 10px;
-  width: 450px;
+  width: 410px;;
   height: 300px;
 
   padding: 10px;
@@ -68,29 +68,24 @@ button{
 
 #lower-main{
   display: flex;
+  justify-content: space-between;
   flex-flow: row wrap;
 }
+
 #digits{
   display: flex;
   flex-flow: row wrap;
   flex: 1 1 0;
 }
+
 #operators{
   display: flex;
   flex-flow: row wrap;
+  justify-content: flex-end;
   flex: 1 1 0;
 }
 
-/* #evaluators,
-#operators,
-#digits{
+#evaluators{
   display: flex;
-  flex-flow: row wrap;
-  flex: 0 1 0;
-
   justify-content: flex-end;
 }
-
-#digits{
-  justify-content: center;
-} */
