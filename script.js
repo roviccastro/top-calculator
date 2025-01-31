@@ -55,6 +55,8 @@ function operate(firstDigit, operatorDigit, secondDigit){
 
 function storeValue(e){
 
+  displayEquation(numOne, numOperator, numTwo);
+
   if (e.target.parentElement.id === 'digits'){
     if (!numOperator){
       numOne += e.target.textContent;
@@ -68,8 +70,6 @@ function storeValue(e){
   if (e.target.id === 'equals'){
     operate(numOne, numOperator, numTwo);
   }
-  
-  displayEquation(numOne, numOperator, numTwo);
 
 }
 
