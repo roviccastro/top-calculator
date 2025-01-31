@@ -26,7 +26,6 @@ function operate(firstDigit, operatorDigit, secondDigit){
   numTwo = '';
   numOperator = '';
 
-  console.log(operatorDigit)
   switch(operatorDigit){
    
     default:
