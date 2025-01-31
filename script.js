@@ -68,16 +68,17 @@ function storeValue(e){
   if (e.target.id === 'equals'){
     operate(numOne, numOperator, numTwo);
   }
-  console.log(`${numOne}, ${numOperator}, ${numTwo}`);
+  
+  displayEquation(numOne, numOperator, numTwo);
 
 }
 
-function displayEquation(eq){
-
+function displayEquation(firstDigit, operatorDigit, secondDigit){
+  resultText.textContent = `${firstDigit} ${operatorDigit} ${secondDigit}`
 }
 
-function displayResult(res){
-  resultText.textContent = `${res}`
+function displayResult(e){
+  resultText.textContent = `${e}`
 }
 
 // Operator Functions
