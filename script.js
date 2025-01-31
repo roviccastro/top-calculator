@@ -1,3 +1,7 @@
+let numOne = '';
+let numTwo = '';
+let numOperator = '';
+
 function operate(firstDigit, operatorDigit, secondDigit){
   
   switch(operatorDigit){
