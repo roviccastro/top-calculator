@@ -55,16 +55,17 @@ function operate(firstDigit, operatorDigit, secondDigit){
 
 function storeValue(e){
 
-  displayEquation(numOne, numOperator, numTwo);
-
   if (e.target.parentElement.id === 'digits'){
     if (!numOperator){
       numOne += e.target.textContent;
+      displayEquation(numOne, numOperator, numTwo);
     } else {
       numTwo += e.target.textContent;
+      displayEquation(numOne, numOperator, numTwo);
     }
   } else if (e.target.parentElement.id === 'operators' && numOne){
     numOperator = e.target.textContent;
+    displayEquation(numOne, numOperator, numTwo);
   };
 
   if (e.target.id === 'equals'){
