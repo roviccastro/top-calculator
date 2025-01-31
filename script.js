@@ -1,18 +1,28 @@
+// Variables
+
 let numOne = '';
 let numTwo = '';
 let numOperator = '';
 
+// DOM Elements
+
 const operatorsContainer = document.querySelector("#operators");
 const operators = operatorsContainer.childNodes;
 
+const evaluatorContainer = document.querySelector("#evaluators");
+const evaluators = evaluatorContainer.childNodes;
+
 const digitsContainer = document.querySelector("#digits");
 const digits = digitsContainer.childNodes;
+
+// Functions
 
 function operate(firstDigit, operatorDigit, secondDigit){
   numOne = '';
   numTwo = '';
   numOperator = '';
 
+  console.log(operatorDigit)
   switch(operatorDigit){
    
     default:
@@ -59,6 +69,8 @@ function storeValue(e){
 
 }
 
+// Operator Functions
+
 function add(a, b){
   console.log(+a + +b)
   return +a + +b;
@@ -75,17 +87,20 @@ function multiply(a, b){
 }
 
 function divide(a, b){
-  if(!a | !b){
-    return `Can't divide by 0`
-  }
   console.log(+a / +b)
   return +a / +b;
 }
+
+// Event Listeners
 
 for (x of operators){
   x.addEventListener('click', storeValue)
 }
 
 for (x of digits){
+  x.addEventListener('click', storeValue)
+}
+
+for (x of evaluators){
   x.addEventListener('click', storeValue)
 }
