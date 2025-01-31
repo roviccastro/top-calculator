@@ -14,6 +14,7 @@
 body{
   display: flex;
   flex-flow: column wrap;
+  gap: 20px;
 
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -51,7 +52,7 @@ button{
 
   border: solid 2px antiquewhite;
   border-radius: 10px;
-  width: 375px;;
+  width: 400px;
   height: 300px;
 
   padding: 10px;
@@ -80,6 +81,15 @@ button{
   flex-flow: row wrap;
 }
 
+#lower-right-main{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  flex: 1 1 0;
+}
+
 #digits{
   display: flex;
   flex-flow: row wrap;
@@ -89,11 +99,16 @@ button{
 #operators{
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
-  flex: 1 1 0;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  flex: 1 0 0;
 }
 
 #evaluators{
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex: 1 1 0;
 }
