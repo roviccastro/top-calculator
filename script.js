@@ -141,9 +141,15 @@ function multiply(a, b){
 }
 
 function divide(a, b){
-  numResult = (parseInt(a) / parseInt(b)).toPrecision(3);
-  numOne = numResult;
-  return numResult;
+
+  if (a > 0 && b > 0){
+    numResult = (parseInt(a) / parseInt(b)).toPrecision(3);
+    numOne = numResult;
+    return numResult;
+  } else {
+    return 0;
+  }
+
 }
 
 // Event Listeners
