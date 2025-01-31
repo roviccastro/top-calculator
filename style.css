@@ -45,6 +45,8 @@ button{
   border-radius: 10px;
   width: 300px;
   height: 300px;
+
+  padding: 10px;
 }
 
 .container{
@@ -53,3 +55,14 @@ button{
   gap: 10px;
 }
 
+#result{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-flow: row wrap;
+  flex: 1 0 auto;
+}
+#text-result{
+  font-size: 20px;
+  font-weight: bold;
+}
