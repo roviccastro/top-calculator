@@ -72,6 +72,10 @@ function storeValue(e){
 
 }
 
+function displayEquation(eq){
+
+}
+
 function displayResult(a){
   resultText.textContent = `${a}`
 }
