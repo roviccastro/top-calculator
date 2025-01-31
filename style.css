@@ -43,12 +43,11 @@ button{
 
   border: solid 2px antiquewhite;
   border-radius: 10px;
-  width: 300px;
+  width: 450px;
   height: 300px;
 
   padding: 10px;
 }
-
 .container{
   display: flex;
   flex-flow: row wrap;
@@ -66,3 +65,32 @@ button{
   font-size: 20px;
   font-weight: bold;
 }
+
+#lower-main{
+  display: flex;
+  flex-flow: row wrap;
+}
+#digits{
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 0;
+}
+#operators{
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 0;
+}
+
+/* #evaluators,
+#operators,
+#digits{
+  display: flex;
+  flex-flow: row wrap;
+  flex: 0 1 0;
+
+  justify-content: flex-end;
+}
+
+#digits{
+  justify-content: center;
+} */
