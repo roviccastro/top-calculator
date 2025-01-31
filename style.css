@@ -10,3 +10,27 @@
 }
 
 /*  */
+
+body{
+  display: flex;
+  flex-flow: row wrap;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+
+  background-color: burlywood;
+}
+
+button{
+  border: solid 0px burlywood;
+  border-radius: 10px;
+  padding: 10px 15px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 16px;
+  color: burlywood;
+
+  background-color: antiquewhite;
+
+}
