@@ -3,6 +3,7 @@
 let numOne = '';
 let numTwo = '';
 let numOperator = '';
+let numResult = '';
 
 // DOM Elements
 
@@ -55,18 +56,34 @@ function operate(firstDigit, operatorDigit, secondDigit){
 
 function storeValue(e){
 
-  if (e.target.parentElement.id === 'digits'){
-    if (!numOperator){
-      numOne += e.target.textContent;
+  if (numResult){
+
+    numOne = numResult;
+
+    if (e.target.parentElement.id === 'operators' && numOne){
+      numOperator = e.target.textContent;
       displayEquation(numOne, numOperator, numTwo);
     } else {
       numTwo += e.target.textContent;
       displayEquation(numOne, numOperator, numTwo);
     }
-  } else if (e.target.parentElement.id === 'operators' && numOne){
-    numOperator = e.target.textContent;
-    displayEquation(numOne, numOperator, numTwo);
-  };
+
+  } else {
+
+    if (e.target.parentElement.id === 'digits'){
+      if (!numOperator){
+        numOne += e.target.textContent;
+        displayEquation(numOne, numOperator, numTwo);
+      } else {
+        numTwo += e.target.textContent;
+        displayEquation(numOne, numOperator, numTwo);
+      }
+    } else if (e.target.parentElement.id === 'operators' && numOne){
+      numOperator = e.target.textContent;
+      displayEquation(numOne, numOperator, numTwo);
+    };
+
+  }
 
   if (e.target.id === 'equals'){
     operate(numOne, numOperator, numTwo);
@@ -85,23 +102,23 @@ function displayResult(e){
 // Operator Functions
 
 function add(a, b){
-  console.log(+a + +b)
-  return +a + +b;
+  numResult = parseInt(a) + parseInt(b);
+  return numResult;
 }
 
 function subtract(a, b){
-  console.log(+a - +b)
-  return +a - +b;
+  numResult = parseInt(a) - parseInt(b);
+  return numResult;
 }
 
 function multiply(a, b){
-  console.log(+a * +b)
-  return +a * +b;
+  numResult = parseInt(a) * parseInt(b);
+  return numResult;
 }
 
 function divide(a, b){
-  console.log(+a / +b)
-  return +a / +b;
+  numResult = parseInt(a) / parseInt(b);
+  return numResult;
 }
 
 // Event Listeners
