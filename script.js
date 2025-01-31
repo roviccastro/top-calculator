@@ -1,37 +1,25 @@
-const resultContainer = document.getElementById("result");
-const resultText = document.getElementById("text-result");
-
-const operatorsContainer = document.getElementById("operators");
-const operators = operatorsContainer.childNodes;
-
-const digitsContainer = document.querySelector("#digits");
-const digits = digitsContainer.childNodes;
-
-function operate(){
-  numOne = window.prompt('Enter Number:', '0');
-  operator = window.prompt('Enter Operator:', '+');
-  numTwo = window.prompt('Enter Number:', '0');
+function operate(firstDigit, operatorDigit, secondDigit){
   
-  switch(operator){
+  switch(operatorDigit){
    
     default:
     case '+':{
-      add(numOne, numTwo);
+      add(firstDigit, secondDigit);
       break;
     }
 
     case '-':{
-      subtract(numOne, numTwo);
+      subtract(firstDigit, secondDigit);
       break;
     }
 
     case '*':{
-      multiply(numOne, numTwo);
+      multiply(firstDigit, secondDigit);
       break;
     }
 
     case '/':{
-      divide(numOne, numTwo);
+      divide(firstDigit, secondDigit);
       break;
     }
 
