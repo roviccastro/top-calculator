@@ -21,7 +21,7 @@ const digits = digitsContainer.childNodes;
 
 // Functions
 
-function operate(firstDigit, operatorDigit, secondDigit){
+function operateValue(firstDigit, operatorDigit, secondDigit){
   numOne = '';
   numTwo = '';
   numOperator = '';
@@ -59,7 +59,7 @@ function evaluateValue(e){
     if (!numTwo){
       displayResult(`${numOne}`)
     } else {
-      operate(numOne, numOperator, numTwo);
+      operateValue(numOne, numOperator, numTwo);
     }
 
   } else if (e.target.id === 'clear'){
