@@ -166,28 +166,12 @@ function storeValue(e){
 }
 
 function keyboardStoreValue(e){
-
-  if (!numOperator){
-    if (e.key.match(/\d/g)){
-      numOne += e.key;
-      displayEquation(numOne, numOperator, numTwo);
-    }
-  } else {
-    if (e.key.match(/\d/g)){
-      numTwo += e.key;
-      displayEquation(numOne, numOperator, numTwo);
-    }
-  } 
-
-  if (numOne && e.key.match(/[+ / * -]/g)){
-    numOperator = e.key;
-    displayEquation(numOne, numOperator, numTwo);
-  } else if (e.key.match(/=/g)){
-    evaluateValue('=')
-  } else if (e.code == 'Enter'){
-    evaluateValue('=')
+  if (isNaN(numResult)){
+    displayResult('0');
   }
-}
+
+  
+} 
 
 function displayEquation(firstDigit, operatorDigit, secondDigit){
   resultText.textContent = `${firstDigit} ${operatorDigit} ${secondDigit}`
