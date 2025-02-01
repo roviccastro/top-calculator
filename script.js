@@ -98,6 +98,10 @@ function deleteValue(e){
 
 function storeValue(e){
 
+  if (isNaN(numResult)){
+    displayResult('0');
+  }
+
   if (numResult){
 
     if (e.target.parentElement.id === 'digits'){
