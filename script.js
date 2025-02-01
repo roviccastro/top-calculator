@@ -167,6 +167,12 @@ function storeValue(e){
 
 function keyboardStoreValue(e){
 
+  if (isNaN(numResult)){
+    displayResult('0');
+  }
+
+  
+
   if (!numOperator){
     if (e.key.match(/\d/g)){
       numOne += e.key;
