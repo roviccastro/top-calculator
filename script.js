@@ -74,6 +74,28 @@ function evaluateValue(e){
   }
 }
 
+function deleteValue(e){
+  if (numOne || numOperator || numTwo){
+    
+    let firstDigit = numOne.toString().split('');
+    let secondDigit = numTwo.toString().split('');
+    let operatorDigit = numOperator.toString();
+
+    if (numTwo){
+      secondDigit.pop();
+      numTwo = secondDigit.join();
+    } else if (numOperator){
+      numOperator = '';
+    } else if (numOne){
+      firstDigit.pop();
+      numOne = firstDigit.join();
+    }
+
+    displayEquation(numOne, numOperator, numTwo);
+
+  }
+}
+
 function storeValue(e){
 
   if (numResult){
@@ -81,7 +103,7 @@ function storeValue(e){
     if (e.target.parentElement.id === 'digits'){
       
       if (!numOperator){
-        if (!(numOne.split('').includes('.'))){
+        if (!(numOne.toString().split('').includes('.'))){
           numOne += e.target.textContent;
           displayEquation(numOne, numOperator, numTwo);
         } else if (e.target.classList.contains('digit')){
@@ -89,7 +111,7 @@ function storeValue(e){
           displayEquation(numOne, numOperator, numTwo);
         }
       } else {
-        if (!(numTwo.split('').includes('.'))){
+        if (!(numTwo.toString().split('').includes('.'))){
           numTwo += e.target.textContent;
           displayEquation(numOne, numOperator, numTwo);
         } else if (e.target.classList.contains('digit')){
@@ -107,7 +129,7 @@ function storeValue(e){
 
     if (e.target.parentElement.id === 'digits'){
       if (!numOperator){
-        if (!(numOne.split('').includes('.'))){
+        if (!(numOne.toString().split('').includes('.'))){
           numOne += e.target.textContent;
           displayEquation(numOne, numOperator, numTwo);
         } else if (e.target.classList.contains('digit')){
@@ -115,7 +137,7 @@ function storeValue(e){
           displayEquation(numOne, numOperator, numTwo);
         }
       } else {
-        if (!(numTwo.split('').includes('.'))){
+        if (!(numTwo.toString().split('').includes('.'))){
           numTwo += e.target.textContent;
           displayEquation(numOne, numOperator, numTwo);
         } else if (e.target.classList.contains('digit')){
