@@ -167,7 +167,7 @@ function storeValue(e){
 
 function keyboardStoreValue(e){
 
-  // For Numbers only, not operators, no result
+  // For Numbers only, no result
   if ((e.key).match(/[(\d).]/g)){
     if (!numOperator){
       // Number doesn't include decimal
