@@ -183,5 +183,9 @@ for (x of digits){
 };
 
 for (x of evaluators){
-  x.addEventListener('click', evaluateValue);
+  if (x.id === 'del'){
+    x.addEventListener('click', deleteValue);
+  } else {
+    x.addEventListener('click', evaluateValue);
+  }
 };
