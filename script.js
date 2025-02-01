@@ -170,8 +170,48 @@ function keyboardStoreValue(e){
     displayResult('0');
   }
 
-  
-} 
+  // For Numbers only, not operators, no result
+  if ((e.key).match(/[(\d).]/g)){
+    if (!numOperator){
+      // Number doesn't include decimal
+      if (!(numOne.toString().split('').includes('.'))){
+        numOne += e.key;
+        displayEquation(numOne, numOperator, numTwo);
+      }  // Number includes decimal
+      else {
+        if ((e.key).match(/[(\d)]/g)){
+          numOne += e.key;
+          displayEquation(numOne, numOperator, numTwo);
+        }
+      }
+    } else {
+      if (!(numTwo.toString().split('').includes('.'))){
+        numTwo += e.key;
+        displayEquation(numOne, numOperator, numTwo);
+      } else {
+        if ((e.key).match(/[(\d)]/g)){
+          numTwo += e.key;
+          displayEquation(numOne, numOperator, numTwo);
+        }
+      }
+    }
+  }
+
+  // For Operators, with one numer
+  if (numOne){
+    if ((e.key).match(/[+ - / *]/g)){
+      numOperator = e.key;
+      displayEquation(numOne, numOperator, numTwo);
+    }
+  }
+
+  // For evaluators
+  if ((e.key).match(/[=]/g)){
+    operateValue(numOne, numOperator, numTwo);
+  } else if (e.code === 'Enter'){
+    operateValue(numOne, numOperator, numTwo);
+  }
+}
 
 function displayEquation(firstDigit, operatorDigit, secondDigit){
   resultText.textContent = `${firstDigit} ${operatorDigit} ${secondDigit}`
