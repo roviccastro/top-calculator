@@ -54,7 +54,14 @@ function operateValue(firstDigit, operatorDigit, secondDigit){
 }
 
 function evaluateValue(e){
-  if (e.target.id === 'equals'){
+
+  if (e === '='){
+    if (!numTwo){
+      displayResult(`${numOne}`)
+    } else {
+      operateValue(numOne, numOperator, numTwo);
+    }
+  } else if (e.target.id === 'equals'){
     
     if (!numTwo){
       displayResult(`${numOne}`)
@@ -158,6 +165,30 @@ function storeValue(e){
 
 }
 
+function keyboardStoreValue(e){
+
+  if (!numOperator){
+    if (e.key.match(/\d/g)){
+      numOne += e.key;
+      displayEquation(numOne, numOperator, numTwo);
+    }
+  } else {
+    if (e.key.match(/\d/g)){
+      numTwo += e.key;
+      displayEquation(numOne, numOperator, numTwo);
+    }
+  } 
+
+  if (numOne && e.key.match(/[+ / * -]/g)){
+    numOperator = e.key;
+    displayEquation(numOne, numOperator, numTwo);
+  } else if (e.key.match(/=/g)){
+    evaluateValue('=')
+  } else if (e.code == 'Enter'){
+    evaluateValue('=')
+  }
+}
+
 function displayEquation(firstDigit, operatorDigit, secondDigit){
   resultText.textContent = `${firstDigit} ${operatorDigit} ${secondDigit}`
 }
@@ -215,3 +246,5 @@ for (x of evaluators){
     x.addEventListener('click', evaluateValue);
   }
 };
+
+window.addEventListener('keyup', keyboardStoreValue);
