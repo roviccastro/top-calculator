@@ -166,9 +166,6 @@ function storeValue(e){
 }
 
 function keyboardStoreValue(e){
-  if (isNaN(numResult)){
-    displayResult('0');
-  }
 
   // For Numbers only, not operators, no result
   if ((e.key).match(/[(\d).]/g)){
@@ -206,10 +203,14 @@ function keyboardStoreValue(e){
   }
 
   // For evaluators
-  if ((e.key).match(/[=]/g)){
-    operateValue(numOne, numOperator, numTwo);
-  } else if (e.code === 'Enter'){
-    operateValue(numOne, numOperator, numTwo);
+  if (numOne && numOperator){
+    if ((e.key).match(/[=]/g)){
+      if (!numTwo) numTwo = 0;
+      operateValue(numOne, numOperator, numTwo);
+    } else if (e.code === 'Enter'){
+      if (!numTwo) numTwo = 0;
+      operateValue(numOne, numOperator, numTwo);
+    }
   }
 }
 
