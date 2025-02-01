@@ -81,11 +81,21 @@ function storeValue(e){
     if (e.target.parentElement.id === 'digits'){
       
       if (!numOperator){
-        numOne += e.target.textContent;
-        displayEquation(numOne, numOperator, numTwo);
+        if (!(numOne.split('').includes('.'))){
+          numOne += e.target.textContent;
+          displayEquation(numOne, numOperator, numTwo);
+        } else if (e.target.classList.contains('digit')){
+          numOne += e.target.textContent;
+          displayEquation(numOne, numOperator, numTwo);
+        }
       } else {
-        numTwo += e.target.textContent;
-        displayEquation(numOne, numOperator, numTwo);
+        if (!(numTwo.split('').includes('.'))){
+          numTwo += e.target.textContent;
+          displayEquation(numOne, numOperator, numTwo);
+        } else if (e.target.classList.contains('digit')){
+          numTwo += e.target.textContent;
+          displayEquation(numOne, numOperator, numTwo);
+        }
       }
 
     } else if (e.target.parentElement.id === 'operators' && numOne){
@@ -97,15 +107,25 @@ function storeValue(e){
 
     if (e.target.parentElement.id === 'digits'){
       if (!numOperator){
-        numOne += e.target.textContent;
-        displayEquation(numOne, numOperator, numTwo);
+        if (!(numOne.split('').includes('.'))){
+          numOne += e.target.textContent;
+          displayEquation(numOne, numOperator, numTwo);
+        } else if (e.target.classList.contains('digit')){
+          numOne += e.target.textContent;
+          displayEquation(numOne, numOperator, numTwo);
+        }
       } else {
-        numTwo += e.target.textContent;
-        displayEquation(numOne, numOperator, numTwo);
+        if (!(numTwo.split('').includes('.'))){
+          numTwo += e.target.textContent;
+          displayEquation(numOne, numOperator, numTwo);
+        } else if (e.target.classList.contains('digit')){
+          numTwo += e.target.textContent;
+          displayEquation(numOne, numOperator, numTwo);
+        }
       }
     } else if (e.target.parentElement.id === 'operators' && numOne){
       numOperator = e.target.textContent;
-      displayEquation(numOne, numOperator, numTwo);
+      displayEquation(numOne, numOperator, numTwo);     
     };
 
   }
@@ -123,19 +143,19 @@ function displayResult(e){
 // Operator Functions
 
 function add(a, b){
-  numResult = (parseInt(a) + parseInt(b)).toPrecision(3);
+  numResult = (parseFloat(a) + parseFloat(b)).toPrecision(3);
   numOne = numResult;
   return numResult;
 }
 
 function subtract(a, b){
-  numResult = (parseInt(a) - parseInt(b)).toPrecision(3);
+  numResult = (parseFloat(a) - parseFloat(b)).toPrecision(3);
   numOne = numResult;
   return numResult;
 }
 
 function multiply(a, b){
-  numResult = (parseInt(a) * parseInt(b)).toPrecision(3);
+  numResult = (parseFloat(a) * parseFloat(b)).toPrecision(3);
   numOne = numResult;
   return numResult;
 }
@@ -143,7 +163,7 @@ function multiply(a, b){
 function divide(a, b){
 
   if (a > 0 && b > 0){
-    numResult = (parseInt(a) / parseInt(b)).toPrecision(3);
+    numResult = (parseFloat(a) / parseFloat(b)).toPrecision(3);
     numOne = numResult;
     return numResult;
   } else {
