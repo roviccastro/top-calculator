@@ -196,7 +196,7 @@ function keyboardStoreValue(e){
 
   // For Operators, with one numer
   if (numOne){
-    if ((e.key).match(/[+ - / *]/g)){
+    if ((e.key).match(/[+-/*]/g)){
       numOperator = e.key;
       displayEquation(numOne, numOperator, numTwo);
     }
