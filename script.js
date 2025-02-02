@@ -90,12 +90,12 @@ function deleteValue(e){
 
     if (numTwo){
       secondDigit.pop();
-      numTwo = secondDigit.join();
+      numTwo = secondDigit.join('');
     } else if (numOperator){
       numOperator = '';
     } else if (numOne){
       firstDigit.pop();
-      numOne = firstDigit.join();
+      numOne = firstDigit.join('');
     }
 
     displayEquation(numOne, numOperator, numTwo);
