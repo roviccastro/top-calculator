@@ -212,6 +212,13 @@ function keyboardStoreValue(e){
       operateValue(numOne, numOperator, numTwo);
     }
   }
+
+  // For backspace
+  if (numResult || numOne){
+    if (e.code === 'Backspace'){
+      deleteValue();
+    }
+  }
 }
 
 function displayEquation(firstDigit, operatorDigit, secondDigit){
