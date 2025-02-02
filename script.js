@@ -232,31 +232,36 @@ function displayResult(e){
 // Operator Functions
 
 function add(a, b){
-  numResult = (parseFloat(a) + parseFloat(b)).toPrecision(3);
-  numOne = numResult;
+  numResult = (parseFloat(a) + parseFloat(b)).toFixed(2);
+  numOne = parseFloat(numResult);
   return numResult;
 }
 
 function subtract(a, b){
-  numResult = (parseFloat(a) - parseFloat(b)).toPrecision(3);
-  numOne = numResult;
+  numResult = (parseFloat(a) - parseFloat(b)).toFixed(2);
+  numOne = parseFloat(numResult);
   return numResult;
 }
 
 function multiply(a, b){
-  numResult = (parseFloat(a) * parseFloat(b)).toPrecision(3);
-  numOne = numResult;
+  numResult = (parseFloat(a) * parseFloat(b)).toFixed(2);
+  numOne = parseFloat(numResult);
   return numResult;
 }
 
 function divide(a, b){
 
   if (a > 0 && b > 0){
-    numResult = (parseFloat(a) / parseFloat(b)).toPrecision(3);
-    numOne = numResult;
+    numResult = (parseFloat(a) / parseFloat(b)).toFixed(2);
+    numOne = parseFloat(numResult);
+
+    if (isNaN(numOne) || isNaN(numResult)){
+      return numOne = 0;
+    }
+
     return numResult;
   } else {
-    return 0;
+    return numOne = 0;
   }
 
 }
